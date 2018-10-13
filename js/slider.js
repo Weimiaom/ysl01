@@ -16,12 +16,11 @@ function Slider(
 	this.doudouColor = doudouColor;
 	this.doudouHighColor = doudouHighColor;//高亮颜色
 	this.isCircle = isCircle;
-	
 	this.direction = direction;//左还是右
 	this.timeSpace = timeSpace;//每张图片直接的间隔,大于1000
 	this.currOrd = 0;
 	this.myTimer = null;
-	
+	this.PointerCount = 0;
 	
 	this.createUI();
 	this.addEvent();
@@ -49,7 +48,7 @@ Slider.prototype.createUI= function(){
 	//2、创建所有的豆豆
 	//1)、豆豆的容器
 	let ulDom = document.createElement("ul");
-	ulDom.style.cssText = "position:absolute;right:600px;bottom:10px;list-style:none;z-index:2;";
+	ulDom.style.cssText = "position:absolute;right:700px;bottom:10px;list-style:none;z-index:2;";
 	this.boxDomObj.appendChild(ulDom);
 	//2)、豆豆
 	for(let i=0;i<this.imgs.length;i++){
@@ -69,25 +68,34 @@ Slider.prototype.createUI= function(){
 		this.liDoms.push(liDom);
 	}
 	
-	//3.创建所有的按钮
-	for(let i=0;i<2;i++){
-		//按钮的容器
-		let pointDivDom = doucument.createElement("div");
-		pointDivDom.style.cssText = "position:absolute ;top:50%;width: 40px;height: 64px;z-index: 3;";
-		this.boxDomObj.appendChild(pointDivDom);  //将按钮添加到轮播图盒子里
-		this.pointDivDoms.push(pointDivDom);  //把创建的按钮放入按钮盒子数组中
-		
-		//按钮
-		let iDom = document.createElement("i");
-		iDom.style.cssText = "position:absolute ;top:50%;";
-		$(iDom).addClass("icon");
-		pointDivDom.appendChild(iDom); //将按钮图标追加到按钮盒子中
-		this.iDoms.push(iDom); //把创建的图标放入按钮图标的数组里
-	}
-		this.pointDivDoms[0].style.left = "50px";  //每个按钮的位置
-		this.pointDivDoms[1].style.right = "50px";
-	
-	
+
+		//3.创建所有的按钮
+		for(let i=0;i<2;i++){
+			//按钮的容器
+			let pointDivDom = document.createElement("div");
+			pointDivDom.style.cssText = "position:absolute ;top:50%;width: 40px;height: 64px;";
+			this.boxDomObj.appendChild(pointDivDom);  //将按钮添加到轮播图盒子里
+			this.pointDivDoms.push(pointDivDom);  //把创建的按钮放入按钮盒子数组中
+			
+			//按钮
+			let iDom = document.createElement("i");
+			iDom.style.cssText = "background-position:0 -89px;width: 40px;height: 64px;";
+			$(iDom).addClass("icon");
+			pointDivDom.appendChild(iDom); //将按钮图标追加到按钮盒子中
+			this.iDoms.push(iDom); //把创建的图标放入按钮图标的数组里
+		}
+			this.pointDivDoms[0].style.left = "50px";  //每个按钮的位置
+			this.pointDivDoms[1].style.right = "50px";
+			
+//			$(this.boxDomObj).hover(()=>{	//箭头函数 不转移this	
+//				this.PointerCount++;
+//				if(this.PointerCount>1){
+//					$(this.pointDivDoms[0]).stop();			//防止鼠标移出后多次触发之前没有发生完事件
+//					$(this.pointDivDoms[1]).stop();
+//				}
+//				$(this.pointDivDoms[0]).fadeToggle(200);	//显示盒子显示按钮
+//				$(this.pointDivDoms[1]).fadeToggle(200);
+//			})
 }
 
 Slider.prototype.showImg = function(inOrd,outOrd){
@@ -97,13 +105,13 @@ Slider.prototype.showImg = function(inOrd,outOrd){
 	}
 	
 	//1)、滑入滑出前的准备工作
-//	this.imgDoms[inOrd].style.left = this.width;
+	this.imgDoms[inOrd].style.left=this.width;
 	
 	//2）、滑入滑出效果
-//	moveObj(this.imgDoms[inOrd],"left",0,300);
-//	moveObj(this.imgDoms[outOrd],"left",-1*this.width,300);
-	$(this.imgDoms[outOrd]).fadeOut(300);
-	$(this.imgDoms[inOrd]).fadeIn(300);
+	moveObj(this.imgDoms[inOrd],"left",0,300);
+	moveObj(this.imgDoms[outOrd],"left",-1*1423,300);
+//	$(this.imgDoms[outOrd]).fadeOut(300);
+//	$(this.imgDoms[inOrd]).fadeIn(300);
 }
 
 
@@ -191,26 +199,27 @@ timeLong:时长
 
 //让某个dom元素花多长时间到达目的地
 
-//function moveObj(domObj,attr,endValue,timeLong){
-//	
-//	let currValue = parseFloat(getStyle(domObj,attr));//parseFloat(domObj.style[attr]);
-//	let direction = endValue>currValue?1:-1;
-//	let timeSpace = 16;
-//	let step = Math.abs(endValue-currValue)/timeLong*timeSpace;//  路程/时间表示的是一毫秒走多少像素*16；
-//	
-//	let myTimer = setInterval(function(){
-//		//1、改变数据
-//		currValue = currValue+direction*step;
-//		//2、处理边界
-//		if(Math.abs(currValue-endValue)<=step){
-//			currValue = endValue;
-//			clearInterval(myTimer);
-//		}		
-//		//3、改变外观
-//		let temp = currValue;
-//		if(attr!="opacity"){
-//			temp = temp+"px";
-//		}
-//		domObj.style[attr] = temp;		
-//	},timeSpace);
-//}
+function moveObj(domObj,attr,endValue,timeLong){
+	
+	let currValue = parseFloat(getStyle(domObj,attr));//parseFloat(domObj.style[attr]);
+	let direction = endValue>currValue?1:-1;
+	let timeSpace = 16;
+	let step = Math.abs(endValue-currValue)/timeLong*timeSpace;//  路程/时间表示的是一毫秒走多少像素*16；
+	
+	let myTimer = setInterval(function(){
+		//1、改变数据
+		currValue = currValue+direction*step;
+		//2、处理边界
+		if(Math.abs(currValue-endValue)<=step){
+			currValue = endValue;
+			clearInterval(myTimer);
+		}		
+		//3、改变外观
+		let temp = currValue;
+		
+		if(attr!="opacity"){
+			temp = temp+"px";
+		}
+		domObj.style[attr] = temp;		
+	},timeSpace);
+}
