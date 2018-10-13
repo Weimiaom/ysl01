@@ -144,6 +144,7 @@ img{
 	padding:0 10px;
 	margin-right:35px;
 	float: left;
+	position: relative;
 }
 .nav-left ul li a{
 	color: black;
@@ -185,11 +186,87 @@ img{
     height: 15px;
 }
 
+
+/*二级菜单sub-menu*/
+.sub-menu-2{
+	display: none;
+	width: 100%;
+	box-sizing: border-box;
+	border-top: 1px solid black;
+	position: absolute;
+	top: 212px;
+	left: 0;
+}
+.menu-two{
+	width: 100%;
+	overflow: hidden;
+	padding: 30px 50px ;
+}
+.menu-two li{
+	width: 210px;
+	margin: 0 20px 8px;
+	float: left;
+}
+.menu-two li a:hover{
+	text-decoration: underline;
+}
+.menu-two li a{
+	color: black;
+}
+.menu-two .title{
+	font-weight: 900;
+}
+.menu-three li{
+	float: none;
+	margin-left: 0;
+}
+.nav-sub-menu-bottom{
+	width: 100%;
+	background-color: #F2F2F2;
+	box-sizing: border-box;
+	padding: 30px 50px ;
+	overflow: hidden;
+}
+
+.products-recommended{
+	float: left;
+	margin-right: 100px;
+	overflow: hidden;
+}
+.left{
+	float: left;
+	margin-right: 20px;
+	position: relative;
+}
+.left img{
+	width: 198px;
+	height: 120px;
+}
+.right{
+	float: left;
+}
+.right h4{
+	margin-top: 15px;
+	margin-bottom: 6px;
+}
+.right a{
+	color: black;
+}
+.right p{
+	margin-bottom: 25px;
+}
+.learn-more{
+	text-decoration: underline;
+}
+
+
+
 /*banner*/
 
 .banner{
 	width: 100%;
 	height: 400px;
+	z-index: 2;
 }
 #box1{
 	width: 100%;
@@ -293,6 +370,13 @@ img{
 .goods-img img{
 	height: 468px;
 }
+.goods-big-box{
+	float: right;
+	width: 58%;
+	height: 490px;
+	overflow: hidden;
+	position: relative;
+}
 .goods-container{
 	width: 58%;
 	float: right;
@@ -300,7 +384,6 @@ img{
 }
 .swiper-slide{
 	width: 234px;
-	height: 260px;
 	float: left;
 	margin-right: 10px;
 }
@@ -320,6 +403,43 @@ img{
 	left: 0;
 	top: 0;
 }
+
+/*立即购买查看详情 开始*/
+.btn-box{
+	position: absolute;
+	left: 20px;
+    top: 80px;
+	z-index: 2;
+	display: none;
+}
+.btn{
+	position: relative;
+	display: block;
+	text-align: center;
+	width: 180px;
+	padding: 15px 0;
+	margin-bottom: 10px;
+	border: 1px solid black;
+}
+.icon-btn-shopping{
+	position: absolute;
+    left: 25px;
+    top: 50%;
+    margin-top: -10px;
+    background-position: 0 -337px;
+    width: 11px;
+    height: 17px;
+}
+.btn-icon{
+	background-color: black;
+	color: white;
+}
+.btn-see{
+	background-color: white;
+	color: black;
+}
+/*立即购买查看详情 结束*/
+
 .details-box{
 	width: 234px;
 	height:180px;
@@ -376,19 +496,43 @@ img{
 }
 
 .goods-btn-left{
-	width:22px ;
-	height: 62px;
-	background-size: 15px 28px;
-	background-color: red;
+	width:40px ;
+	height: 70px;
 	position: absolute;
 	left: 495px;
     top: 25%;
 }
 .icon-left{
-	background-position: -103px -314px;
-	width: 22px;
-	height: 62px;
+	background-position: 0px -85px;
+	width:40px ;
+	height: 70px;
 }
+.goods-btn-right{
+	width:40px ;
+	height: 70px;
+	position: absolute;
+	right: 10px;
+    top: 25%;
+}
+.icon-right{
+	background-position: -46px -85px;
+	width:40px ;
+	height: 70px;
+}
+.goods-block{
+	width: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0;
+}
+.goods-none{
+	width: 100%;
+	
+	position: absolute;
+	right: -770px;
+	top: 0;
+}
+
 
 /*article One  明星产品结束*/
 
