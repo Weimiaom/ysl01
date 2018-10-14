@@ -68,11 +68,24 @@
 $(function(){
 	$(".nav-left li").mouseover(function(){
 		let index = $(this).index();
+		$(".nav-left li a:first-child").eq(index).css({color: "#cb9864"});
 		$(".nav .sub-menu-2").eq(index).show();
 	})
 	$(".nav-left li").mouseout(function(){
 		let index = $(this).index();
+		$(".nav-left li a:first-child").eq(index).css({color: "#000"});
 		$(".nav .sub-menu-2").eq(index).hide();
+	})
+	$(".nav .sub-menu-2").mouseover(function(){
+		$(this).show();
+		let index = $(this).index();
+		$(".nav-left li a:first-child").eq(index-1).css({color: "#cb9864"});
+		
+	})
+	$(".nav .sub-menu-2").mouseout(function(){
+		$(this).hide();
+		let index = $(this).index();
+		$(".nav-left li a:first-child").eq(index-1).css({color: "#000"});
 	})
 })
 
@@ -172,12 +185,41 @@ $(function(){
 
 /*************移入显示购买及详情***************/
 
+//$(function(){
+//	$(".swiper-slide .img-box").mouseover(function(){
+//		let n = $(this).index();
+//		$(this).css({opacity:0.5});
+//		$(".img-box .btn-box").eq(n).show();
+//	})
+//	$(".img-box").mouseout(function(){
+//		let n = $(this).index();
+//		$(this).css({opacity:1});
+//		$(".swiper-slide .img-box .btn-box").eq(n).hide();
+//	})
+//})
+
 $(function(){
-	$(".btn-box").mouseover(function(){
-		$(this).css({"display":"block"});
+	$(".img-box").mouseover(function(){
+		$(this).find("img").css({opacity:0.5});
+		$(this).find(".btn-box").show();
 	})
-	$(".btn-box").mouseout(function(){
-		$(this).hide()
+	$(".img-box").mouseout(function(){
+		$(this).find("img").css({opacity:1});
+		$(this).find(".btn-box").hide();
+	})
+	$(".btn-icon").mouseover(function(){
+		$(this).css({"background-color":"white","color":"black"});
+		$(this).find(".icon-btn-shopping").css({"background-position":"-17px -337px"});
+	})
+	$(".btn-icon").mouseout(function(){
+		$(this).css({"background-color":"black","color":"white"});
+		$(this).find(".icon-btn-shopping").css({"background-position":"0 -337px"});
+	})
+	$(".btn-see").mouseover(function(){
+		$(this).css({"background-color":"black","color":"white"});
+	})
+	$(".btn-see").mouseout(function(){
+		$(this).css({"background-color":"white","color":"black"});
 	})
 })
 
@@ -192,8 +234,14 @@ $(function(){
 
 
     
+/******************点击口红变色goods-color********************/
 
-
+$(function(){
+	$(".goods-color-btn-right").click(function(){
+		$(".goods-color-ul").animate({left:"-30px"});
+		$(".goods-color-btn-left").show();
+	})
+})
 
 
 
