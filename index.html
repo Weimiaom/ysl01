@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 	</head>
 	<body>
 		<!--header开始-->
@@ -20,6 +21,7 @@
 									<i class="icon icon-counter-inquiry"></i>
 									<span>专柜查询</span>
 								</a>
+								<div class="header-sub-menu" style="display: none;"></div>
 							</li>
 							<li>
 								<a href="#">
@@ -60,7 +62,7 @@
 								<a href="#">
 									<span>订阅电子杂志</span>
 								</a>
-								<div class="header-sub-menu" style="display: block;">
+								<div class="header-sub-menu" style="display: none;">
 									<div class="header-menu-left">
 										<div class="header-title">
 											<h4>订阅圣罗兰电子杂志</h4>
@@ -105,7 +107,7 @@
 											<li><a href="">收藏您喜欢的产品</a></li>
 											<li><a href="">一手新品资讯</a></li>
 										</ul>
-										<a href="#">立即注册</a>
+										<a href="register.html" target="_blank">立即注册</a>
 									</div>
 								</div>
 							</li>
@@ -118,11 +120,11 @@
 										<div class="header-title">
 											<h4>用户登录</h4>
 										</div>
-										<div class="form-group loginpullname">
+										<div class="form-group loginName">
 											<div class="form-input">
-												<input type="text" placeholder="请输入邮箱或手机" id="loginpullName" value="">
+												<input type="text" placeholder="请输入用户名" id="loginname" value="">
 												<div class="msg-block">
-													<span>请输入有效的邮箱或手机号码</span>
+													<span>请输入正确的用户名</span>
 												</div>
 											</div>
 										</div>
@@ -180,7 +182,7 @@
 											<li><a href="">收藏您喜欢的产品</a></li>
 											<li><a href="">一手新品资讯</a></li>
 										</ul>
-										<div class="form-btn-box"><a href="#" class="btn btn-black e-register">立即注册</a></div>
+										<div class="form-btn-box"><a href="register.html" class="btn btn-black e-register" target="_blank">立即注册</a></div>
 									</div>
 								</div>
 							</li>
@@ -1580,4 +1582,5 @@
 <script type="text/javascript" src="js/slider.js" ></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/index.js" ></script>
+<script type="text/javascript" src="js/public.js" ></script>
 
