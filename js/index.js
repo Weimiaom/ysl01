@@ -1,3 +1,24 @@
+
+/**************滑过顶部显示登录注册*****************/
+$(function(){
+	$(".center-left li").mouseover(function(){
+		let index = $(this).index();
+		$(".center-left .header-sub-menu").eq(index).show();
+	})
+	$(".center-left li").mouseout(function(){
+		let index = $(this).index();
+		$(".center-left .header-sub-menu").eq(index).hide();
+	})
+	$(".center-right li").mouseover(function(){
+		let index = $(this).index();
+		$(".center-right .header-sub-menu").eq(index).show();
+	})
+	$(".center-right li").mouseout(function(){
+		let index = $(this).index();
+		$(".center-right .header-sub-menu").eq(index).hide();
+	})
+})
+
 /*************             二级菜单             ******************/
 
 //	$(".nav-left ul li a").mouseover(function(){
