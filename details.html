@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>注册</title>
+		<title>商品详情</title>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="css/details.css"/>
 	</head>
 	<body>
 		<!--header开始-->
@@ -70,9 +70,9 @@
 										<div class="form-group subscribe">
 											<label class="control-label">请输入您的邮箱</label>
 											<div class="form-input">
-												<input type="text" >
+												<input type="text" id="subscribe">
 												<div class="form-btn-box">
-													<a class="btn-black e-subscribe" >订阅</a>
+													<a class="btn-black e-subscribe" id="subscription">订阅</a>
 												</div>
 												<div class="msg-block">
 													<span>请输入有效的邮箱</span>
@@ -81,7 +81,7 @@
 										</div>
 										<div class="form-group">
 											<div class="checkbox-wrap">
-												<label class="form-checkbox e-checkbox"><i class="icon icon-checkbox"></i></label>
+												<label class="form-checkbox e-checkbox" id="subscribeMessage"><i class="icon icon-checkbox"></i></label>
 												<p>
 													我同意依照本<a target="_blank" href="#">使用条款</a>
 													和<a target="_blank" href="#">隐私政策</a>
@@ -120,17 +120,17 @@
 										<div class="header-title">
 											<h4>用户登录</h4>
 										</div>
-										<div class="form-group userName">
+										<div class="form-group loginpullname">
 											<div class="form-input">
-												<input type="text" placeholder="请输入邮箱或手机" id="loginname" value="">
+												<input type="text" placeholder="请输入邮箱或手机" id="loginpullName" value="">
 												<div class="msg-block">
 													<span>请输入有效的邮箱或手机号码</span>
 												</div>
 											</div>
 										</div>
-										<div class="form-group userPass">
+										<div class="form-group loginpullpassword">
 											<div class="form-input">
-												<input type="password" placeholder="请输入密码" id="loginpass" value="">
+												<input type="password" placeholder="请输入密码" id="loginpullPassword" value="">
 												<div class="msg-block">
 													<span>请输入正确的密码</span>
 												</div>
@@ -145,7 +145,7 @@
 											<a href="#">忘记密码</a>
 										</div>
 										<div class="form-btn-box">
-											<a class="btn btn-black e-login" id="login">登录</a>
+											<a class="btn btn-black e-login" id="loginPullLogin">登录</a>
 										</div>
 										<div class="huo">
 											<span>或</span>
@@ -499,175 +499,226 @@
 					</div>
 				</div>
 			</div>
-			
-			
-			
-			
 		</div>
 		<!--header结束-->
 		
-		<div class="wriper">
-			<section class="container">
-				<article class="article-back">
-					<ul>
-						<li><a href="index.html">首页</a></li>>
-						<li><a href="">我的账户</a></li>
+		<!--商品详情开始-->
+		
+		<section class="container">
+			<!--小导航-->
+			<article class="article art-one">
+				<div class="small-daohang">
+					<ul class="list">
+						<li><a href="index.html">首页</a></li>
+						<li><i class="icon icon-right-small"></i></li>
+						<li><a href="index.html">彩妆</a></li>
+						<li><i class="icon icon-right-small"></i></li>
+						<li><a href="index.html">唇部</a></li>
+						<li><i class="icon icon-right-small"></i></li>
+						<li><a href="index.html">唇膏</a></li>
+						<li><i class="icon icon-right-small"></i></li>
+						<li><a href="index.html">圣罗兰莹亮醇魅唇膏</a></li>
+						<li><i class="icon icon-right-small"></i></li>
 					</ul>
-				</article>
-				<article class="article-register">
-					<div class="center-wriper">
-						<div class="login-other">
-							<h4>
-								我是已注册账户前往<a href="login.html">登录</a>
-							</h4>
-							<p>使用官方合作账号登录</p>
-							<ul>
-								<li>
-									<a href=""><i class="icon icon-login-other-weixin"></i></a>
-									<span>微信</span>
-								</li>
-								<li>
-									<a href=""><i class="icon icon-login-other-qq"></i></a>
-									<span>QQ</span>
-								</li>
-								<li>
-									<a href="#"><i class="icon icon-login-other-weibo"></i></a>
-									<span>新浪</span>
-								</li>
-								<li>
-									<a href=""><i class="icon icon-login-other-zfb"></i></a>
-									<span>支付宝</span>
-								</li>
+				</div>
+			</article>
+			<!--商品主要介绍-->
+			
+			<article class="article art-two">
+				<div class="product-left">
+					<div class="small-clickbox">
+						<div class="small-con">
+							<ul class="small-ul">
+								<li class="is-active"><img src="img/sm01.jpg"/></li>
+								<li><img src="img/sm02.jpg"/></li>
 							</ul>
 						</div>
-						<div class="huo">
-							<span>或</span>
-						</div>
-						<h4>新用户注册</h4>
-						<!--                       注册                                                        -->
-						
-						
-						<form class="row">
-							<div class="register-input userName">
-								<div class="form-group">
-									<label class="control-label">用户名<span>*</span></label>
-									<div class="form-input">
-										<input type="text" id="username" value="" name="username">
-										<div class="msg-block">
-											<span>请输入用户名</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="register-input xmname">
-								<div class="form-group">
-									<label class="control-label">姓名<span>*</span></label>
-									<div class="form-input">
-										<input type="text" id="xmname" value="">
-										<div class="msg-block">
-											<span>姓名</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="register-input userPass">
-								<div class="form-group">
-									<label class="control-label">密码<span>*</span></label>
-									<div class="form-input">
-										<input type="password" id="userpass" value="" placeholder="请输入您的密码" name="userpass">
-										<div class="password-strong">
-											<div class="pass-color is-danger">
-												<span>密码强度</span>
-											</div>
-										</div>
-										<div class="msg-block">
-											<span>请输入您的密码</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="register-input replacepassword">
-								<div class="form-group">
-									<label class="control-label">确认密码<span>*</span></label>
-									<div class="form-input">
-										<input type="password" id="replacepassword" value="" placeholder="请再次输入您的密码">
-										<div class="password-strong">
-											<div class="pass-color is-danger">
-												<span>密码强度</span>
-											</div>
-										</div>
-										<div class="msg-block">
-											<span>请输入确认密码</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="register-input captchacode">
-								<div class="form-group">
-									<label class="control-label">请输入验证码<span>*</span></label>
-									<div class="form-input yzm">
-										<div class="input-box">
-											<input type="text" maxlength="4" id="catpchaCode">
-										</div>
-										<div class="btn-huan">
-											<div class="code">
-												<img src="img/code1.jpg" alt="" id="changeImg"/>
-											</div>
-											<span>
-												看不清？
-												<a href="#" id="btn-change">换一张</a>
-											</span>
-										</div>
-										<div class="msg-block">
-											<span>请输入四位随机验证码</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<input type="submit" name="register" id="register" value="注册" class="btn btn-black"/>
-							
-						</form>
-						
-						
-						<!--<div class="btn-box">
-							<a href="" class="btn btn-black" id="register">同意协议并注册</a>
-						</div>-->
 					</div>
-				</article>
-				<article class="article-right-menu">
-					<div class="customer-member">
-						<h4>注册成为圣罗兰官网会员即可尊享</h4>
-						<div class="text-box">
-							<h3>获取最新商品信息</h3>
-							<p>已注册邮箱将第一时间获取特价促销、<br>新品发布、礼盒套装及更多会员专享资讯。</p>
+					<div class="main-box">
+						<div class="wish-list">
+							<i class="icon icon-add-wish"></i>
+							<i class="icon icon-added-wish"></i>
 						</div>
-						<div class="text-box">
-							<h3>订单历史记录</h3>
-							<p>查看您的订单详情，及时了解物流配送状态。</p>
-						</div>
-						<div class="text-box">
-							<h3>生日礼遇</h3>
-							<p>完善个人生日信息，生日当月发现惊喜，<br>届时请查看已注册邮箱。</p>
-						</div>
-						<div class="text-box">
-							<h3>快速购买通道</h3>
-							<p>我们会在您的账户中保存历史账单和<br>配送信息，使您方便快捷地购物。<br><a href="http://policy.lorealchina.com/privacypolicy">(了解更多隐私政策)</a></p>
+						<div class="main-con">
+							<div class="main-con-sm">
+								<div class="big-img now-active">
+									<img src="img/big01.jpg"/>
+								</div>
+								<div class="big-img">
+									<img src="img/big02.jpg"/>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="customber-service">
-						<p>如果有任何问题，请联系我们</p>
-						<p><i class="icon icon-hotline"></i><span>400-820-6362</span></p>
-						<p>（周一至周日 9:00-21:00）</p>
-						<p>联系客服下单 惊喜送礼</p>
-						<div class="btn-box">
-							<a href="#" class="btn btn-black">在线咨询</a>
+				</div>
+				<div class="product-right">
+					<div class="product-top">
+						<div class="product-tit">
+							<h2 class="en-tit">ROUGE VOLUPTÉ SHINE</h2>
+							<h1>圣罗兰莹亮纯魅唇膏</h1>
+						</div>
+						<div class="product-star">
+							<div class="star-wrap">
+								<div class="star-content">
+									<i class="icon icon-star-black"></i>
+								</div>
+								<i class="icon icon-star-gray"></i>
+							</div>
+							<div class="star-msg">
+								<a class="comment">202条评论</a>
+							</div>
 						</div>
 					</div>
-				</article>
-			</section>
-		</div>
+					<div class="product-direction">
+						<p>
+							YSL圣罗兰莹亮纯魅唇膏富含6种美唇精粹滋润呵护，以水光般莹亮色彩亲吻双唇
+							<span><a class="product-detail">查看详情</a></span>
+						</p>
+					</div>
+					<div class="product-color">
+						<div class="product-color-list">
+							<div class="goods-color-container">
+								<ul class="goods-color-ul">
+									<li><span><img src="img/1527669457833.jpg"/></span></li>
+									<li><span><img src="img/1527669799142.jpg"/></span></li>
+									<li><span><img src="img/1530257013338.jpg"/></span></li>
+									<li><span><img src="img/1527669732474.jpg"/></span></li>
+									<li><span><img src="img/1527669505796.jpg"/></span></li>
+									<li><span><img src="img/1527669572966.jpg"/></span></li>
+									<li><span><img src="img/1527669719421.jpg"/></span></li>
+									<li><span><img src="img/1530257013338.jpg"/></span></li>
+									<li><span><img src="img/1527669564258.jpg"/></span></li>
+									<li><span><img src="img/1527669457833.jpg"/></span></li>
+									<li><span><img src="img/1527669799142.jpg"/></span></li>
+									<li><span><img src="img/1530257013338.jpg"/></span></li>
+									<li><span><img src="img/1527669732474.jpg"/></span></li>
+									<li><span><img src="img/1527669505796.jpg"/></span></li>
+									<li><span><img src="img/1527669572966.jpg"/></span></li>
+									<li><span><img src="img/1527669719421.jpg"/></span></li>
+									<li><span><img src="img/1530257013338.jpg"/></span></li>
+									<li><span><img src="img/1527669564258.jpg"/></span></li>
+									<li><span><img src="img/1527669457833.jpg"/></span></li>
+									<li><span><img src="img/1527669799142.jpg"/></span></li>
+									<li><span><img src="img/1530257013338.jpg"/></span></li>
+									<li><span><img src="img/1527669732474.jpg"/></span></li>
+									<li><span><img src="img/1527669505796.jpg"/></span></li>
+									<li><span><img src="img/1527669572966.jpg"/></span></li>
+									<li><span><img src="img/1527669719421.jpg"/></span></li>
+									<li><span><img src="img/1530257013338.jpg"/></span></li>
+									<li><span><img src="img/1527669564258.jpg"/></span></li>
+									
+								</ul>
+							</div>
+							<div class="goods-color-btn-left"><i class="icon icon-goods-color-left"></i></div>
+							<div class="goods-color-btn-right"><i class="icon icon-goods-color-right"></i></div>
+						</div>
+						<div class="product-color-select">
+							<div class="dropdown is-color">
+								<a class="btn">
+									<span class="dropdown-text">
+										<span class="txt-one"><img src="img/1527669457833.jpg" alt=""></span>
+										<span class="txt-two">#67（新色）</span>
+									</span>
+									<span class="dropdown-icon"><i class="icon icon-caret"></i></span>
+								</a>
+								<div class="sub-menu">
+									<div class="viewport">
+										<div class="overview">
+											<ul>
+												<li>
+													<a>
+														<span><img src="img/1527669457833.jpg" alt=""></span>
+														<span>#12 红粉派对</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1527669799142.jpg" alt=""></span>
+														<span>#43 唇印 (热卖)</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1530257013338.jpg" alt=""></span>
+														<span>#14 一见倾心(热卖)</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1527669732474.jpg" alt=""></span>
+														<span>#04 危情禁果</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1527669505796.jpg" alt=""></span>
+														<span>#05 浮生若梦</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1527669572966.jpg" alt=""></span>
+														<span>#06 情窦初开</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1527669719421.jpg" alt=""></span>
+														<span>#08 纯真梦幻</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1531130213023.png" alt=""></span>
+														<span>#09 裸色暗恋</span>
+													</a>
+												</li>
+												<li>
+													<a>
+														<span><img src="img/1527669564258.jpg" alt=""></span>
+														<span>#13 邂逅巴黎</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-service">
+							<div class="form-group">
+								<label class="form-checkbox">
+									<i class="icon icon-checkbox"></i>
+									<span>专属刻字</span>
+								</label>
+							</div>
+                      		<p>勾选后点击加入购物袋，即享专属定制刻字服务。</p>
+                      		<p class="gift-info" style="color:black;">刻字服务为80元/次，如果每笔订单满800元，可尊享免费刻字服务。刻字工艺需耗时5工作日，最终配送时间会相应延长。</p>
+					  	</div>
+					  	<div class="product-buy">
+					  		<div class="pro-num">
+					  			<a class="btn btn-min is-disabled">-</a>
+					  			<input type="text" value="1"/>
+					  			<a class="btn btn-add">+</a>
+					  		</div>
+					  		<div class="pro-price">
+					  			￥<span>320</span>
+					  		</div>
+					  		<div class="pro-btn">
+					  			<a class="btn btn-black addCart">
+					  				<i class="icon icon-btn-shopping-bag"></i>
+					  				<span>加入购物袋</span>
+					  			</a>
+					  		</div>
+					  	</div>
+					</div>
+				</div>
+			</article>
+			
+			
+		</section>
+		
+		<!--商品详情结束-->
 		
 		
 		<!--back-top-->
@@ -809,128 +860,8 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/public.js" ></script>
 
+
 <script type="text/javascript">
 	
 	
-	
-	
-	$(function(){
-		$(".form-input input").focus(function(){
-			$(this).css({"border":"1px solid black"})
-		})
-		$(".form-input input").blur(function(){
-			$(this).css({"border":"1px solid red"});
-			$(this).nextAll(".msg-block").css({"display":"block","color":"red"})
-			
-		})
-	})
-	
-	
-	$(function(){
-		//验证用户名
-		
-		$("#username").focus(function(){
-			if($(this).val()==''){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("请输入用户名")
-			}
-		}).blur(function(){
-			if($(this).val()==''){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("用户名不能为空")
-			}
-		})
-		//验证密码
-		var p_pass = 0
-		var pass_reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/;
-		$("#userpass").focus(function(){
-			if($(this).val()==''){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("请输入密码");
-				p_pass = 0;
-			}
-		}).keyup(function(){
-			if(!pass_reg.test($(this).val())){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("最小长度8位，包含大小写字母和数字");
-				p_pass = 0;
-			}else if($(this).val()==''){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("最小长度8位，包含大小写字母和数字");
-				p_pass = 0;
-			}else{
-				$(this).nextAll(".msg-block").css({"display":"none"});
-				p_pass = 1;
-			}
-		}).blur(function(){
-			if(!pass_reg.test($(this).val())){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("最小长度8位，包含大小写字母和数字");
-				p_pass = 0;
-			}else if($(this).val()==''){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("最小长度8位，包含大小写字母和数字");
-				p_pass = 0;
-			}else{
-				$(this).nextAll(".msg-block").css({"display":"none"});
-				p_pass = 1;
-			}
-		})
-		//确认密码
-		var p_repass = 0
-		let pass = $("#userpass").val();
-		let repass = $(this).val();
-		$("#replacepassword").blur(function(){
-			if(pass != repass){
-				$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-				$(this).nextAll(".msg-block").html("两次密码格式不一致");
-				p_repass = 0;
-			}else{
-				$(this).nextAll(".msg-block").css({"display":"none"});
-				p_repass = 1;
-			}
-		})
-	})
-	
-	$(function(){
-		
-	})
-	
-	
-//	$(function(){
-//		$(".form-input input").focus(function(){
-//			$(this).css({"border":"1px solid black"})
-//		})
-//		$(".form-input input").blur(function(){
-//			$(this).css({"border":"1px solid red"});
-////			$(this).nextAll(".msg-block").css({"display":"block","color":"red"})
-//			$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
-//			$(this).nextAll(".msg-block").html("请输入用户名123")
-//		})
-//	})
-//	
-	
-	var eve=event||window.event;
-	$(".row").submit(function(eve){
-		if(!eve.isDefaultPrevented()){
-			eve.preventDefault();
-		}
-		$.ajax({
-			type:"post",
-			url:"regSave.php",
-			async:true,
-			data:$(".row").serialize(),
-			success:function(response){
-				if(response==1){
-					location="regSuccess.html";
-				}else if(response==0){
-					alert("注册失败");
-				}else if(response==-1){
-					alert("用户名存在");
-				}
-			}
-		});
-	})
 </script>
-
-

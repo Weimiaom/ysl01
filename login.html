@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>12323
 	<head>
 		<meta charset="UTF-8">
 		<title>登录</title>
@@ -519,37 +519,41 @@
 					<div class="center-wriper">
 						<div class="login-left">
 							<h4>登录</h4>
-							<div class="form-group userName">
-								<label class="control-label">您的邮箱/手机<span>*</span></label>
-								<div class="form-input">
-									<input type="text" id="username" value="">
-									<div class="msg-block">
-										<span>请输入有效的邮箱或手机号码</span>
+							<form class="loginRow">
+								<div class="form-group userName">
+									<label class="control-label">您的邮箱/手机<span>*</span></label>
+									<div class="form-input">
+										<input type="text" id="username" value="">
+										<div class="msg-block">
+											<span>请输入有效的邮箱或手机号码</span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="form-group userPass">
-								<label class="control-label">您的邮箱/手机<span>*</span></label>
-								<div class="form-input">
-									<input type="password" id="userpass" value="">
-									<div class="msg-block">
-										<span>请输入正确的密码</span>
+								<div class="form-group userPass">
+									<label class="control-label">密码<span>*</span></label>
+									<div class="form-input">
+										<input type="password" id="userpass" value="">
+										<div class="msg-block">
+											<span>请输入正确的密码</span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="form-group rememberPass">
-								<label class="form-checkbox e-checkbox">
-									<i class="icon icon-checkbox"></i>
-									<span>记住用户名</span>
-								</label>
-								<a href="#">
-									<span>忘记密码？</span>
-								</a>
-								<p class="login-error">对不起，登录失败。请检查你是否输入有误，请再试一遍。</p>
-							</div>
-							<div class="btn-box">
-								<a href="#" class="btn btn-black" id="login">登录</a>
-							</div>
+								<div class="form-group rememberPass">
+									<label class="form-checkbox e-checkbox">
+										<i class="icon icon-checkbox"></i>
+										<span>记住用户名</span>
+									</label>
+									<a href="#">
+										<span>忘记密码？</span>
+									</a>
+									<p class="login-error">对不起，登录失败。请检查你是否输入有误，请再试一遍。</p>
+								</div>
+								<input type="submit" name="login" id="login" value="登录" class="btn btn-black"/>
+								<!--<div class="btn-box">
+									<a href="#" class="btn btn-black" id="login">登录</a>
+								</div>-->
+							</form>
+							
 							<div class="huo">
 								<span>或</span>
 							</div>
@@ -754,3 +758,39 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/public.js" ></script>
 
+
+<script type="text/javascript">
+	
+	$(function(){
+		$(".form-input input").focus(function(){
+			$(this).css({"border":"1px solid black"})
+		})
+		$(".form-input input").blur(function(){
+			$(this).css({"border":"1px solid red"});
+			$(this).nextAll(".msg-block").css({"display":"block","color":"red"})
+			
+		})
+	})
+	
+	
+	
+	var eve=event||window.event;
+	$(".loginRow").submit(function(eve){
+		if(!eve.isDefaultPrevented()){
+			eve.preventDefault();
+		}
+		$.ajax({
+			type:"get",
+			url:"regLogin.php",
+			async:true,
+			data:$(".loginRow").serialize(),
+			success:function(response){
+				if(response==1){
+					alert("登录成功");
+				}else if(response==0){
+					alert("登录失败");
+				}
+			}
+		});
+	})
+</script>

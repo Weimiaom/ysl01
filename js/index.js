@@ -112,6 +112,16 @@ $(function(){
 	})
 })
 
+//$(function(){
+//	$(".goods-color-btn-right").click(function(){
+//		$(this).prev().animate({left:"-=30px"});
+//		$(this).prevUntil(".goods-color-container").children(".goods-color-ul").show();
+//	})
+//	$(".goods-color-btn-left").click(function(){
+//		$(".goods-color-ul").animate({left:"+=30px"});
+//	})
+//})
+
 
 
 

@@ -27,7 +27,7 @@
         .article-register{
             padding: 50px 25px 0 30px;
             .center-wriper{
-                width: 902px;
+                width: 950px;
                 .login-other{
                     width: 100%;
                     overflow: hidden;
@@ -101,9 +101,10 @@
                     width: 100%;
                     overflow: hidden;
                     .register-input{
-                        float: left;
-                        padding-right: 10px;
-                        width: 48%;
+                            float: left;
+                            padding: 0 24px;
+                            width: 50%;
+                            box-sizing: border-box;
                         .form-group{
                             margin-bottom: 30px;
                             position: relative;
@@ -150,7 +151,6 @@
                                     }
                                 }
                                 .msg-block{
-    //                              display: none;
                                     margin-top: 10px;
                                     font-size: 14px;
                                     color: #737373;
@@ -199,7 +199,6 @@
                                     }
                                 }
                                 .msg-block{
-    //                              display: none;
                                     margin-top: 10px;
                                     font-size: 14px;
                                     color: #737373;
@@ -207,23 +206,20 @@
                             }
                         }
                     }
-                }
-                .btn-box{
-                    padding-top: 10px;
-                    text-align: center;
                     .btn-black{
                         display: block;
-                        margin: 0 auto;
                         width: 180px;
                         height: 45px;
                         line-height: 45px;
                         color: white;
+                        border: 1px solid #000000;
                         background-color: black;
                         text-align: center;
                         cursor: pointer;
                         text-decoration: none;
                     }
-                }
+                    
+                }  
             }
         }
         .article-right-menu{
