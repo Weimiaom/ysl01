@@ -115,6 +115,9 @@
                             height: 500px;
                             display: none;
                         }
+                        .big-img:hover{
+                            transform: translateZ(0px);
+                        }
                         .now-active{
                             display: block;
                         }
@@ -216,6 +219,7 @@
                                 width: 43px;
                                 height: 40px;
                                 padding: 10px;
+                                cursor: pointer;
                                 box-sizing: border-box;
                                 span{
                                     display: block;
@@ -227,6 +231,19 @@
                                     }
                                 }
                             }
+                            .is-choose{
+                                position: relative;
+                                span:after{
+                                    display: block;
+                                    position: absolute;
+                                    top: 4px;
+                                    left: 4px;
+                                    content: '';
+                                    width: 30px;
+                                    height: 30px;
+                                    border: 1px solid #d9d9d9;
+                                }
+                            }
                         }
                     }
                     .goods-color-btn-left{
@@ -236,6 +253,7 @@
                         position: absolute;
                         left: 0px;
                         top: 13px;
+                        display: none;
                         .icon-goods-color-left{
                             background-position:-103px -314px;
                             width: 10px;
@@ -249,7 +267,6 @@
                         position: absolute;
                         right: 0px;
                         top: 13px;
-//                      display: none;
                         .icon-goods-color-right{
                             background-position:-116px -314px;
                             width: 10px;
@@ -307,9 +324,10 @@
                             position: absolute;
                             top: 45px;
                             left: 0;
+                            z-index: 1;
                             .viewport{
                                 height: 180px;
-                                overflow: hidden;
+                                overflow-y: scroll;
                                 position: relative;
                                 .overview{
                                     position: relative;
@@ -340,7 +358,7 @@
                     }
                 }
                 .product-service{
-                    padding-bottom: 30px;
+                    padding-bottom: 60px;
                     .form-group{
                         box-sizing: border-box;
                         vertical-align: middle;
@@ -398,11 +416,12 @@
                             right: 0;
                             top: 0;
                         }
-                        .btn.is-disabled{
+                        .is-disabled{
                             color: #ccc;
                             background-color: #f2f2f2;
+                            cursor: none;
                         }
-                        input{
+                        .num-input{
                             box-sizing: border-box;
                             width: 100%;
                             height: 43px;

@@ -511,13 +511,13 @@
 					<ul class="list">
 						<li><a href="index.html">首页</a></li>
 						<li><i class="icon icon-right-small"></i></li>
-						<li><a href="index.html">彩妆</a></li>
+						<li><a href="#">彩妆</a></li>
 						<li><i class="icon icon-right-small"></i></li>
-						<li><a href="index.html">唇部</a></li>
+						<li><a href="#">唇部</a></li>
 						<li><i class="icon icon-right-small"></i></li>
-						<li><a href="index.html">唇膏</a></li>
+						<li><a href="#">唇膏</a></li>
 						<li><i class="icon icon-right-small"></i></li>
-						<li><a href="index.html">圣罗兰莹亮醇魅唇膏</a></li>
+						<li><a href="#">圣罗兰莹亮醇魅唇膏</a></li>
 						<li><i class="icon icon-right-small"></i></li>
 					</ul>
 				</div>
@@ -525,6 +525,8 @@
 			<!--商品主要介绍-->
 			
 			<article class="article art-two">
+				
+				<!--放大图片-->
 				<div class="product-left">
 					<div class="small-clickbox">
 						<div class="small-con">
@@ -551,6 +553,7 @@
 						</div>
 					</div>
 				</div>
+				<!--右边介绍-->
 				<div class="product-right">
 					<div class="product-top">
 						<div class="product-tit">
@@ -579,7 +582,7 @@
 						<div class="product-color-list">
 							<div class="goods-color-container">
 								<ul class="goods-color-ul">
-									<li><span><img src="img/1527669457833.jpg"/></span></li>
+									<li class="is-choose"><span><img src="img/1527669457833.jpg"/></span></li>
 									<li><span><img src="img/1527669799142.jpg"/></span></li>
 									<li><span><img src="img/1530257013338.jpg"/></span></li>
 									<li><span><img src="img/1527669732474.jpg"/></span></li>
@@ -698,7 +701,7 @@
 					  	<div class="product-buy">
 					  		<div class="pro-num">
 					  			<a class="btn btn-min is-disabled">-</a>
-					  			<input type="text" value="1"/>
+					  			<input type="text" value="1" class="num-input"/>
 					  			<a class="btn btn-add">+</a>
 					  		</div>
 					  		<div class="pro-price">
@@ -862,6 +865,93 @@
 
 
 <script type="text/javascript">
+	//点击小图显示大图
+	$(function(){
+		$(".small-ul li").click(function(){
+			let index = $(this).index();
+			$(this).addClass("is-active").siblings().removeClass("is-active");
+			$(".main-con-sm .big-img").eq(index).addClass("now-active").siblings().removeClass("now-active");
+		})
+	})
+	
+	//图片放大镜
+	$(function(){
+		$
+	})
+	
+	
+	//口红色号左右轮播
+	$(function(){
+		$(".goods-color-btn-right").click(function(){
+			$(".goods-color-ul").animate({left:"-=43px"});
+			$(".goods-color-btn-left").show();
+		})
+		$(".goods-color-btn-left").click(function(){
+			$(".goods-color-ul").animate({left:"+=43px"});
+		})
+	})
+	
+//	点击每个口红色号li被选中
+	$(function(){
+		$(".goods-color-ul li").click(function(){
+//			var index = $(this).index();//获得当前点击标题的下标
+			$(this).addClass("is-choose").siblings().removeClass("is-choose");//给当前选项添加选中，其他移除选中
+			$(this).children("span").show();
+//			$(".favorites-aside-content .goods-tab").eq(index).show().siblings().hide();//对应下标的内容框显示，其他隐藏
+		})
+	})
+	
+	//点击显示下拉菜单右箭头旋转
+	$(function(){
+		$(".btn").toggle(
+			function () {
+			    $(this).next().show();
+				$(this).children(".dropdown-icon").children(".icon-caret").css({'transform': 'rotate(180deg)'});
+			},
+			function () {
+			    $(this).next().hide();
+				$(this).children(".dropdown-icon").children(".icon-caret").css({'transform': 'rotate(360deg)'});
+			}
+		);
+	})
+	
+	//加减
+	$(function(){
+		let val = $(".num-input").val();
+		$(".btn-add").mouseover(function(){
+			$(this).css({"background-color":"gray"})
+		})
+		$(".btn-add").mouseout(function(){
+			$(this).css({"background-color":"#fff"})
+		})
+		$(".btn-min").mouseover(function(){
+			if(val>1){
+				$(this).css({"background-color":"gray"})
+			}
+		})
+		$(".btn-min").mouseout(function(){
+			$(this).css({"background-color":"#fff"})
+		})
+		
+		$(".btn-add").click(function(){
+			val++;
+			$(".num-input").val(val);
+			$(this).prevAll("a").removeClass("is-disabled");
+		})
+		
+		$(".btn-min").click(function(){
+			if(val>1){
+				val--;
+				$(".num-input").val(val);
+			}else{
+				$(this).addClass("is-disabled");
+				$(".num-input").val(1);
+			}
+		})
+		
+	})
+	
+	
 	
 	
 </script>

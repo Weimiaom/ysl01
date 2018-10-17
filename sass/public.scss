@@ -97,6 +97,16 @@ p{
 //  line-height: 34px;
     float: left;
 }
+.login-txt{
+    display: none;
+}
+.is-logged{
+    display: block;
+}
+.is-logged a{
+    color: black;
+}
+
 .center-right>ul>li>a{
     color: black;
 }

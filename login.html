@@ -521,26 +521,26 @@
 							<h4>登录</h4>
 							<form class="loginRow">
 								<div class="form-group userName">
-									<label class="control-label">您的邮箱/手机<span>*</span></label>
+									<label class="control-label">您的用户名<span>*</span></label>
 									<div class="form-input">
-										<input type="text" id="username" value="">
+										<input type="text" id="username" name="username" value="">
 										<div class="msg-block">
-											<span>请输入有效的邮箱或手机号码</span>
+											<span>请输入用户名</span>
 										</div>
 									</div>
 								</div>
 								<div class="form-group userPass">
 									<label class="control-label">密码<span>*</span></label>
 									<div class="form-input">
-										<input type="password" id="userpass" value="">
+										<input type="password" id="userpass" name="userpass" value="">
 										<div class="msg-block">
-											<span>请输入正确的密码</span>
+											<span>请输入密码</span>
 										</div>
 									</div>
 								</div>
 								<div class="form-group rememberPass">
-									<label class="form-checkbox e-checkbox">
-										<i class="icon icon-checkbox"></i>
+									<label class="form-checkbox ">
+										<input type="checkbox" name="" class="remname" />
 										<span>记住用户名</span>
 									</label>
 									<a href="#">
@@ -761,16 +761,46 @@
 
 <script type="text/javascript">
 	
-	$(function(){
-		$(".form-input input").focus(function(){
-			$(this).css({"border":"1px solid black"})
-		})
-		$(".form-input input").blur(function(){
+//	$(function(){
+//		$(".form-input input").focus(function(){
+//			$(this).css({"border":"1px solid black"})
+//		})
+//		$(".form-input input").blur(function(){
+//			$(this).css({"border":"1px solid red"});
+//			$(this).nextAll(".msg-block").css({"display":"block","color":"red"})
+//			
+//		})
+//	})
+	var z_user = 0;
+	//用户名不能为空
+	$("#username").focus(function(){
+		$(this).css({"border":"1px solid black"})
+		$(this).nextAll(".msg-block").css({"display":"none"})
+	}).blur(function(){
+		let valname = $(this).val();
+		if(valname==""){
 			$(this).css({"border":"1px solid red"});
 			$(this).nextAll(".msg-block").css({"display":"block","color":"red"})
-			
-		})
+			z_user = 0;
+		}
+		z_user = 1;
 	})
+	//密码不能为空
+	var z_pass = 0;
+	$("#userpass").focus(function(){
+		$(this).css({"border":"1px solid black"})
+		$(this).nextAll(".msg-block").css({"display":"none"})
+	}).blur(function(){
+		let valpass = $(this).val();
+		if(valpass==""){
+			$(this).css({"border":"1px solid red"});
+			$(this).nextAll(".msg-block").css({"display":"block","color":"red"});
+			z_pass = 0;
+		}
+		z_pass = 1;
+	})
+	
+	
 	
 	
 	
@@ -779,18 +809,26 @@
 		if(!eve.isDefaultPrevented()){
 			eve.preventDefault();
 		}
-		$.ajax({
-			type:"get",
-			url:"regLogin.php",
-			async:true,
-			data:$(".loginRow").serialize(),
-			success:function(response){
-				if(response==1){
-					alert("登录成功");
-				}else if(response==0){
-					alert("登录失败");
+		if(z_pass==1 && z_user==1){
+			$.ajax({
+				type:"post",
+				url:"regLogin.php",
+				async:true,
+				data:$(".loginRow").serialize(),
+				success:function(response){
+					if(response==1){
+						if($(".remname").is(":checked")){
+							$.cookie("username",$('#username').val(),{expires:7,path:"/"});
+						}else{
+							$.cookie("username",$('#username').val(),{path:"/"})
+						}
+						location.href = 'index.html';
+					}else if(response==0){
+						$(".login-error").show();
+					}
 				}
-			}
-		});
+			});
+		}
+		
 	})
 </script>

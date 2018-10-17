@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+.icon-right-small{
+    background-position: -293px -32px;
+    width: 4px;
+    height: 8px;
+}
+.icon-add-wish{
+    background-position: -105px -244px;
+    width: 28px;
+    height: 23px;
+    display: block;
+}
+
+.icon-added-wish{
+    background-position: -139px -244px;
+    width: 28px;
+    height: 23px;
+    display: none;
+}
+.icon-star-black{
+    background-position: -181px -159px;
+    width: 62px;
+    height: 10px;
+}
+.icon-star-gray{
+    background-position: -49px -190px;
+    width: 62px;
+    height: 10px;
+}
+.icon-caret{
+    background-position: -84px -227px;
+    width: 9px;
+    height: 6px;
+}
+
+.container{
+    width:100%;
+    .article{
+        box-sizing: border-box;
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .art-one .small-daohang{
+        padding: 20px 0;
+        .list li{
+            float: left;
+            margin-right: 10px;
+            font-size: 12px;
+            a{
+                color: #999;
+            }
+        }
+    }
+    .art-two{
+        .shoppingcart-box{
+            background: pink;
+            .shopping-container{
+                overflow: hidden;
+                .cart-left{
+                    width: 950px;
+                    float: left;
+                    margin-right: 30px;
+                    .shopping-title{
+                        font-size: 30px;
+                        margin: 28px 0;
+                    }
+                }
+                .cart.right{
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

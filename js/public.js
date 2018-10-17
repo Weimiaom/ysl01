@@ -158,3 +158,5 @@ $(".back-top").click(function(){
 
 //触发滚动事件，避免刷新的时候显示回到顶部按钮
 $(window).trigger("scroll");
+
+
